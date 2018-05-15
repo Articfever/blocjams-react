@@ -102,6 +102,7 @@ import PlayerBar from './PlayerBar';
           currentSong={this.state.currentSong}
           handleSongClick={() => this.handleSongClick(this.state.currentSong)}
           handlePrevClick={() => this.handlePrevClick()}
+          handleNextClick={() => this.handleNextClick()}
           />
       </section>
       );
