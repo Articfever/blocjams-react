@@ -89,6 +89,14 @@ import PlayerBar from './PlayerBar';
         this.setState({ currentTime: newTime });
       }
 
+      formatTime(seconds) {
+         if (isNaN(seconds)) return "-:--";
+
+         let date = new Date(null);
+         date.setSeconds(seconds);
+         return date.toISOString().substr(14, 5);
+       }
+
     render() {
       return (
         <section className="album">
@@ -135,6 +143,7 @@ import PlayerBar from './PlayerBar';
           handlePrevClick={() => this.handlePrevClick()}
           handleNextClick={() => this.handleNextClick()}
           handleTimeChange={(e) => this.handleTimeChange(e)}
+          formatTime={(seconds) => this.formatTime(seconds)}
           />
       </section>
       );
